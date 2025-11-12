@@ -19,7 +19,7 @@ export async function POST(req: Request) {
 
   console.log("Using API Key:", apiKey || process.env.AI_GATEWAY_API_KEY);
   const result = streamText({
-    model: gateway('openai/gpt-4o-mini'),
+    model: gateway('meituan/longcat-flash-chat'),
     messages: convertToModelMessages(messages),
     system:
       'You are a helpful assistant that can answer questions and help with tasks',

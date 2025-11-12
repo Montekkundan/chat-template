@@ -70,11 +70,11 @@ export function Settings() {
       setStatus("idle")
     } catch {}
   }
-
+  
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline">Setings</Button>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>

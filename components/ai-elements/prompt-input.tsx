@@ -706,7 +706,10 @@ export const PromptInput = ({
       })
     ).then((convertedFiles: FileUIPart[]) => {
       try {
-        const result = onSubmit({ text, files: convertedFiles }, event);
+  // onSubmit expects the message shape provided by UseChatHelpers["sendMessage"].
+  // Construct the object and cast to the expected type to satisfy TypeScript.
+  const message = { text, files: convertedFiles } as unknown as PromptInputMessage;
+  const result = onSubmit(message, event);
 
         // Handle both sync and async onSubmit
         if (result instanceof Promise) {

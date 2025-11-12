@@ -17,7 +17,6 @@ export async function POST(req: Request) {
     apiKey: apiKey || process.env.AI_GATEWAY_API_KEY,
   });
 
-  console.log("Using API Key:", apiKey || process.env.AI_GATEWAY_API_KEY);
   const result = streamText({
     model: gateway('meituan/longcat-flash-chat'),
     messages: convertToModelMessages(messages),
